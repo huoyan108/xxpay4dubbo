@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  dubbo:
+    application:
+      name: xxpay4dubbo-web
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    scan: org.xxpay.dubbo
+logging:
+  file: ./log/xxpay4dubbo-web.log

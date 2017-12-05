@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+<body>
+	<div>
+	<h2>扫码支付接口</h2><br/>
+		<form id="payForm" action="/pay/tabbyPay" method="post">
+			条码编号:<input type="text" name="authCode"> 价格：<input type="text"
+				name="totalAmount"> <input type="hidden" name="operatorId"
+				value="D171128111115087" /> 提交:<input type="submit">
+		</form>
+	</div>
+	<br/>
+	<div>
+	<h2>支付宝查询接口,没用</h2><br/>
+		<form id="queryForm" action="/pay/queryAliPay" method="post">
+			请输入查询订单号:<input type="text" name="out_trade_no"> 提交:<input
+				type="submit">
+		</form>
+	</div>
+	<h2>支付宝退款接口</h2><br/>
+	<div>
+		订单号与支付宝交易号二选一填写就可以
+		<br/>
+		<form id="refundForm" action="/pay/aliRefund" method="post">
+			商户订单号:<input type="text" name="outTradeNo"> 
+			支付宝交易号：<input type="text" name="AlitradeNo"> 
+			退款金额：<input type="text" name="refundAmount">
+			 <input type="hidden"
+				name="operator_id" value="1" />
+				提交:<input type="submit">
+		</form>
+	</div>
+	<br/>
+	<div>
+	<h2>预先生成支付宝二维码订单.返回了网络地址,到时候用js解析</h2><br/>
+		<form id="proForm" action="/pay/precreate" method="post">
+			请输入价格:<input type="text" name="money"> <br/>
+			提交:<input
+				type="submit">
+		</form>
+	</div>
+	<br/>
+	<div>
+	<h2>微信退款接口:</h2><br/>
+		<form id="wecharForm" action="/pay/wecharRefund" method="post">
+			请输入商品价格:<input type="text" name="money"><br/>
+			退款的订单号:<input type="text" name="outTradeNo"> <br/>
+			微信的订单号:<input type="text" name="wecharTransactionId"><br/> 
+			提交:<input
+				type="submit">
+		</form>
+	</div>
+	<div>
+	<h2>微信二维码接口:</h2><br/>
+		<form id="weProForm" action="/pay/wechar" method="post">
+			请输入商品价格:<input type="text" name="money"><br/>
+			设备号:<input type="text" name="deviceInfo"> <br/>
+			提交:<input
+				type="submit">
+		</form>
+	</div>
+</body>
+</html>
